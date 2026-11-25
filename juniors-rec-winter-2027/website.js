@@ -11,7 +11,7 @@
      Rebuild instead of hand-editing, so every channel page stays identical. Only CHANNEL* differs per page.
      The redirect is NOT set here: the code reads it from the Hidden Form's "On Submit → Redirect to URL". */
   var CONFIG = {
-      "WEBHOOK_URL": "",
+      "WEBHOOK_URL": "https://services.leadconnectorhq.com/hooks/yclxxS7PDfN2MuEopX1v/webhook-trigger/olYBWSQPSAYwclEIigj9",
       "HIDDEN_FORM_ID": "PJmAA0xMeMJynawvlT07",
       "REDIRECT_TIMEOUT_MS": 5000,
       "BROWSER_LEAD": false,
