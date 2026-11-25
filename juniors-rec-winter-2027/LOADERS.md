@@ -9,6 +9,13 @@ Paste ONE of these into the page's full-width Custom Code element (section paddi
 <script src="https://piotrsawosz-cpu.github.io/ftl-pages/juniors-rec-winter-2027/email.js"></script>
 ```
 
+## flyer
+
+```html
+<div id="ffl-mount" style="min-height:100vh;display:flex;align-items:center;justify-content:center;font:500 15px/1.4 system-ui,sans-serif;color:#7A8599">Loading…</div>
+<script src="https://piotrsawosz-cpu.github.io/ftl-pages/juniors-rec-winter-2027/flyer.js"></script>
+```
+
 ## google
 
 ```html
