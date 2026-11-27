@@ -699,6 +699,7 @@
       program_age_group: byNum ? groupFor(byNum) : '',
       preferred_location: loc ? loc.value : CONFIG.DEFAULT_LOCATION,
       sms_consent: form.querySelector('input[name="sms_consent"]').checked ? 'yes' : 'no',
+      sms_opt_in: form.querySelector('input[name="sms_consent"]').checked ? 'Yes' : 'No',  // HubSpot's exact option values (forwarded to the HubSpot form)
       consent_language: consentLanguage(),
       zip_qualification: zipOk ? 'qualified' : 'not qualified',
       child_age_qualification: ageOk ? 'qualified' : 'not qualified',
