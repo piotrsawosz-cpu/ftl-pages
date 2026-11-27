@@ -14,7 +14,8 @@
       "WEBHOOK_URL": "https://services.leadconnectorhq.com/hooks/yclxxS7PDfN2MuEopX1v/webhook-trigger/olYBWSQPSAYwclEIigj9",
       "HIDDEN_FORM_ID": "PJmAA0xMeMJynawvlT07",
       "REDIRECT_TIMEOUT_MS": 5000,
-      "BROWSER_LEAD": false,
+      "BROWSER_LEAD": true,
+      "META_PIXEL_ID": "1821531752145395",
       "CHANNEL": "google",
       "CHANNEL_SOURCE": "google",
       "CHANNEL_MEDIUM": "cpc",
@@ -137,6 +138,16 @@
       "DONE_TEXT": "We've got your details. Check your email for the next steps."
   };
   /* ===================================================================================================== */
+
+  /* ---- Meta pixel (program.json meta_pixel_id). GHL funnels on go.ftlutd.com load no pixel, so the page loads it:
+     PageView on load; the Lead on submit is sent below when browser_lead is true. Skipped if GHL already loaded fbq. */
+  if (CONFIG.META_PIXEL_ID && !window.fbq) try {
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;
+    s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', CONFIG.META_PIXEL_ID);
+    fbq('track', 'PageView');
+  } catch (x) {}
 
   /* ---- Guard: GHL's "Save & exit" resume dialog on the Hidden Form ----
      If the Hidden Form has "Save & exit confirmation" on, GHL stores the email our code typed in
