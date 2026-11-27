@@ -138,6 +138,40 @@
   };
   /* ===================================================================================================== */
 
+  /* ---- Guard: GHL's "Save & exit" resume dialog on the Hidden Form ----
+     If the Hidden Form has "Save & exit confirmation" on, GHL stores the email our code typed in
+     localStorage (form_progress_<id>) and, on the next visit, opens a "Continue where you left off?"
+     dialog and sets body overflow:hidden. The dialog sits in the invisible pinned form section, so the
+     page just freezes (user, 2026-11-27). Wipe the saved progress before GHL reads it, and undo the
+     scroll lock if the dialog opens anyway. */
+  function clearFormProgress() {
+    try { localStorage.removeItem('form_progress_' + CONFIG.HIDDEN_FORM_ID); } catch (x) {}
+    try { sessionStorage.removeItem('form_progress_' + CONFIG.HIDDEN_FORM_ID); } catch (x) {}
+  }
+  clearFormProgress();
+  (function () {
+    function resumeDialogOpen() {
+      var b = document.querySelector('.start-over-button, .continue-button');
+      return !!(b && !b.closest('#ffl'));
+    }
+    function unlock() {
+      if (document.body && document.body.style.overflow === 'hidden' && resumeDialogOpen() &&
+          !document.documentElement.classList.contains('ffl-lock')) {
+        var so = document.querySelector('.start-over-button');
+        if (so && !so.closest('#ffl')) { try { so.click(); } catch (x) {} }
+        document.body.style.overflow = '';
+        clearFormProgress();
+      }
+    }
+    function watch() {
+      if (!document.body || !('MutationObserver' in window)) return;
+      new MutationObserver(unlock).observe(document.body, { attributes: true, attributeFilter: ['style'] });
+      unlock();
+    }
+    if (document.body) watch(); else document.addEventListener('DOMContentLoaded', watch);
+    window.addEventListener('load', function () { setTimeout(unlock, 500); setTimeout(unlock, 2500); });
+  })();
+
   var root = document.getElementById('ffl');
   if (!root) return;
   var $ = function (id) { return document.getElementById(id); };
