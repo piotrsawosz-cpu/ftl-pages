@@ -14,8 +14,9 @@
       "WEBHOOK_URL": "https://services.leadconnectorhq.com/hooks/yclxxS7PDfN2MuEopX1v/webhook-trigger/olYBWSQPSAYwclEIigj9",
       "HIDDEN_FORM_ID": "PJmAA0xMeMJynawvlT07",
       "REDIRECT_TIMEOUT_MS": 5000,
-      "BROWSER_LEAD": true,
+      "BROWSER_LEAD": false,
       "META_PIXEL_ID": "1821531752145395",
+      "HUBSPOT_ID": "45210805",
       "CHANNEL": "organic",
       "CHANNEL_SOURCE": "social",
       "CHANNEL_MEDIUM": "organic_social",
@@ -147,6 +148,12 @@
     s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', CONFIG.META_PIXEL_ID);
     fbq('track', 'PageView');
+  } catch (x) {}
+
+  // HubSpot tracking code (hubspot_portal_id, default 45210805): page views + the hubspotutk cookie. Skipped if already on the page.
+  if (CONFIG.HUBSPOT_ID && !document.getElementById('hs-script-loader')) try {
+    var hs = document.createElement('script'); hs.id = 'hs-script-loader'; hs.async = true; hs.defer = true;
+    hs.src = 'https://js.hs-scripts.com/' + CONFIG.HUBSPOT_ID + '.js'; document.head.appendChild(hs);
   } catch (x) {}
 
   /* ---- Guard: GHL's "Save & exit" resume dialog on the Hidden Form ----
@@ -724,6 +731,7 @@
       channel: CONFIG.CHANNEL,
       price_shown: currentPrice(),
       event_id: eventId,
+      hutk: (document.cookie.match(/(?:^|;\s*)hubspotutk=([^;]+)/) || [])[1] || '',
       page_url: location.href.split('#')[0],
       submitted_at: new Date().toISOString()
     };

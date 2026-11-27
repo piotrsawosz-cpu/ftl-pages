@@ -7,8 +7,26 @@
   m.parentNode.removeChild(m);
 })();
 (function () {
-  var T = {"links": {"meta": "https://app.playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDgzLTE4MDA4MTQ1MDZ8MEcvWGhUa08rYU5qaUxHemlaM1VPdUZydkp0bHhGMDlmSkxOVFZKNXZJdz0=&program_id=134499&attribution_id=1648", "tiktok": "https://app.playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDgzLTE4MDA4MTQ1MDZ8MEcvWGhUa08rYU5qaUxHemlaM1VPdUZydkp0bHhGMDlmSkxOVFZKNXZJdz0=&program_id=134499&attribution_id=1646", "google": "https://app.playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDgzLTE4MDA4MTQ1MDZ8MEcvWGhUa08rYU5qaUxHemlaM1VPdUZydkp0bHhGMDlmSkxOVFZKNXZJdz0=&program_id=134499&attribution_id=1646", "organic": "https://app.playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDgzLTE4MDA4MTQ1MDZ8MEcvWGhUa08rYU5qaUxHemlaM1VPdUZydkp0bHhGMDlmSkxOVFZKNXZJdz0=&program_id=134499&attribution_id=1645", "email": "https://app.playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDgzLTE4MDA4MTQ1MDZ8MEcvWGhUa08rYU5qaUxHemlaM1VPdUZydkp0bHhGMDlmSkxOVFZKNXZJdz0=&program_id=134499&attribution_id=1649", "website": "https://app.playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDgzLTE4MDA4MTQ1MDZ8MEcvWGhUa08rYU5qaUxHemlaM1VPdUZydkp0bHhGMDlmSkxOVFZKNXZJdz0=&program_id=134499&attribution_id=1646", "flyer": "https://app.playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDgzLTE4MDA4MTQ1MDZ8MEcvWGhUa08rYU5qaUxHemlaM1VPdUZydkp0bHhGMDlmSkxOVFZKNXZJdz0=&program_id=134499&attribution_id=1647"}, "link": "https://app.playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDgzLTE4MDA4MTQ1MDZ8MEcvWGhUa08rYU5qaUxHemlaM1VPdUZydkp0bHhGMDlmSkxOVFZKNXZJdz0=&program_id=134499&attribution_id=1646", "campaign": "juniors-rec-winter-2027", "value": 199};
+  var T = {"links": {"meta": "https://app.playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDgzLTE4MDA4MTQ1MDZ8MEcvWGhUa08rYU5qaUxHemlaM1VPdUZydkp0bHhGMDlmSkxOVFZKNXZJdz0=&program_id=134499&attribution_id=1648", "tiktok": "https://app.playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDgzLTE4MDA4MTQ1MDZ8MEcvWGhUa08rYU5qaUxHemlaM1VPdUZydkp0bHhGMDlmSkxOVFZKNXZJdz0=&program_id=134499&attribution_id=1646", "google": "https://app.playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDgzLTE4MDA4MTQ1MDZ8MEcvWGhUa08rYU5qaUxHemlaM1VPdUZydkp0bHhGMDlmSkxOVFZKNXZJdz0=&program_id=134499&attribution_id=1646", "organic": "https://app.playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDgzLTE4MDA4MTQ1MDZ8MEcvWGhUa08rYU5qaUxHemlaM1VPdUZydkp0bHhGMDlmSkxOVFZKNXZJdz0=&program_id=134499&attribution_id=1645", "email": "https://app.playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDgzLTE4MDA4MTQ1MDZ8MEcvWGhUa08rYU5qaUxHemlaM1VPdUZydkp0bHhGMDlmSkxOVFZKNXZJdz0=&program_id=134499&attribution_id=1649", "website": "https://app.playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDgzLTE4MDA4MTQ1MDZ8MEcvWGhUa08rYU5qaUxHemlaM1VPdUZydkp0bHhGMDlmSkxOVFZKNXZJdz0=&program_id=134499&attribution_id=1646", "flyer": "https://app.playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDgzLTE4MDA4MTQ1MDZ8MEcvWGhUa08rYU5qaUxHemlaM1VPdUZydkp0bHhGMDlmSkxOVFZKNXZJdz0=&program_id=134499&attribution_id=1647"}, "link": "https://app.playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDgzLTE4MDA4MTQ1MDZ8MEcvWGhUa08rYU5qaUxHemlaM1VPdUZydkp0bHhGMDlmSkxOVFZKNXZJdz0=&program_id=134499&attribution_id=1646", "campaign": "juniors-rec-winter-2027", "value": 199, "hubspot": "45210805", "pixel": "1821531752145395"};
   var root = document.getElementById('ffl'); if (!root) return;
+  // Meta pixel (meta_pixel_id): load it + PageView unless GHL already loaded fbq. Lead is NOT sent here:
+  // it comes from the GHL workflow's Conversions API step (one Lead per parent, no double counting).
+  if (T.pixel && !window.fbq) try {
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;
+    s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', T.pixel); fbq('track', 'PageView');
+  } catch (x) {}
+  // HubSpot tracking code (hubspot_portal_id, default 45210805): page views + the hubspotutk cookie. Skipped if already on the page.
+  if (T.hubspot && !document.getElementById('hs-script-loader')) try {
+    var hs = document.createElement('script'); hs.id = 'hs-script-loader'; hs.async = true; hs.defer = true;
+    hs.src = 'https://js.hs-scripts.com/' + T.hubspot + '.js'; document.head.appendChild(hs);
+  } catch (x) {}
+  function px(kind, name, data, once) {   // one browser event; `once` = per browser session
+    if (!window.fbq) return;
+    try { if (once) { if (sessionStorage.getItem('ffl_px_' + name)) return; sessionStorage.setItem('ffl_px_' + name, '1'); } } catch (x) {}
+    try { fbq(kind, name, data || {}, { eventID: name + '.' + Date.now() + '.' + Math.random().toString(36).slice(2, 10) }); } catch (x) {}
+  }
   var qs = new URLSearchParams(location.search);
   // GHL's Hidden Form redirect can drop the query string: fall back to what the registration page saved
   // in browser storage (same funnel domain) within the last 2 hours. URL values win when present.
@@ -37,9 +55,7 @@
   root.querySelectorAll('[data-reg]').forEach(function (a) {
     if (link) a.href = link;
     a.addEventListener('click', function () {   // Meta InitiateCheckout, once per browser session
-      try { if (sessionStorage.getItem('ffl_ic_sent')) return; sessionStorage.setItem('ffl_ic_sent', '1'); } catch (x) {}
-      var eid = 'ic.' + Date.now() + '.' + Math.random().toString(36).slice(2, 10);
-      if (window.fbq) try { fbq('track', 'InitiateCheckout', { content_name: T.campaign, value: T.value, currency: 'USD' }, { eventID: eid }); } catch (x) {}
+      px('track', 'InitiateCheckout', { content_name: T.campaign, value: T.value, currency: 'USD' }, true);
     });
   });
 })();
