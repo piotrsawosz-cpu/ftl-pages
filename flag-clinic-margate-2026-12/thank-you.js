@@ -7,8 +7,21 @@
   m.parentNode.removeChild(m);
 })();
 (function () {
-  var T = {"links": {"organic": "https://app.playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDgzLTE4MDA3NDE5MzJ8NmQ5STZZVlhxVkZNa0FFRnpTcVJpSXFsTGdoYU0xL2NCR0t1VDhacHhUdz0=&program_id=132236&attribution_id=1618", "meta": "https://app.playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDgzLTE4MDA3NDE5MzJ8NmQ5STZZVlhxVkZNa0FFRnpTcVJpSXFsTGdoYU0xL2NCR0t1VDhacHhUdz0=&program_id=132236&attribution_id=1619", "email": "https://app.playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDgzLTE4MDA3NDE5MzJ8NmQ5STZZVlhxVkZNa0FFRnpTcVJpSXFsTGdoYU0xL2NCR0t1VDhacHhUdz0=&program_id=132236&attribution_id=1616", "flyer": "https://app.playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDgzLTE4MDA3NDE5MzJ8NmQ5STZZVlhxVkZNa0FFRnpTcVJpSXFsTGdoYU0xL2NCR0t1VDhacHhUdz0=&program_id=132234&attribution_id=1642", "website": "https://app.playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDgzLTE4MDA3NDE5MzJ8NmQ5STZZVlhxVkZNa0FFRnpTcVJpSXFsTGdoYU0xL2NCR0t1VDhacHhUdz0=&program_id=132236&attribution_id=1641"}, "title": "FTL Flag Free Clinic \u00b7 Margate", "location": "Margate Sports Complex, 1695 Banks Rd, Margate, FL 33063", "details": "FTL Flag Free Clinic \u00b7 Margate. Please arrive early for check-in. Bring: cleats, water bottle. Questions: (954) 256-6704", "campaign": "flag-clinic-margate-2026-12", "sessions": [{"date": "2026-12-05", "label": "Sat, Dec 5 \u00b7 3:30 PM\u20135:30 PM", "start_time": "3:30 PM", "end_time": "5:30 PM"}], "waitlist_text": "This date is full. We contact you right away if a spot opens up."};
+  var T = {"links": {"organic": "https://app.playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDgzLTE4MDA3NDE5MzJ8NmQ5STZZVlhxVkZNa0FFRnpTcVJpSXFsTGdoYU0xL2NCR0t1VDhacHhUdz0=&program_id=132236&attribution_id=1618", "meta": "https://app.playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDgzLTE4MDA3NDE5MzJ8NmQ5STZZVlhxVkZNa0FFRnpTcVJpSXFsTGdoYU0xL2NCR0t1VDhacHhUdz0=&program_id=132236&attribution_id=1619", "email": "https://app.playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDgzLTE4MDA3NDE5MzJ8NmQ5STZZVlhxVkZNa0FFRnpTcVJpSXFsTGdoYU0xL2NCR0t1VDhacHhUdz0=&program_id=132236&attribution_id=1616", "flyer": "https://app.playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDgzLTE4MDA3NDE5MzJ8NmQ5STZZVlhxVkZNa0FFRnpTcVJpSXFsTGdoYU0xL2NCR0t1VDhacHhUdz0=&program_id=132234&attribution_id=1642", "website": "https://app.playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDgzLTE4MDA3NDE5MzJ8NmQ5STZZVlhxVkZNa0FFRnpTcVJpSXFsTGdoYU0xL2NCR0t1VDhacHhUdz0=&program_id=132236&attribution_id=1641"}, "pixel": "2542431589593197", "value": 0, "title": "FTL Flag Free Clinic \u00b7 Margate", "location": "Margate Sports Complex, 1695 Banks Rd, Margate, FL 33063", "details": "FTL Flag Free Clinic \u00b7 Margate. Please arrive early for check-in. Bring: cleats, water bottle. Questions: (954) 256-6704", "campaign": "flag-clinic-margate-2026-12", "sessions": [{"date": "2026-12-05", "label": "Sat, Dec 5 \u00b7 3:30 PM\u20135:30 PM", "start_time": "3:30 PM", "end_time": "5:30 PM"}], "waitlist_text": "This date is full. We contact you right away if a spot opens up."};
   var root = document.getElementById('ffl'); if (!root) return;
+  // Meta pixel (meta_pixel_id): load it + PageView unless GHL already loaded fbq. Lead is NOT sent here:
+  // it comes from the GHL workflow's Conversions API step (one Lead per parent, no double counting).
+  if (T.pixel && !window.fbq) try {
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;
+    s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', T.pixel); fbq('track', 'PageView');
+  } catch (x) {}
+  function px(kind, name, data, once) {   // one browser event; `once` = per browser session
+    if (!window.fbq) return;
+    try { if (once) { if (sessionStorage.getItem('ffl_px_' + name)) return; sessionStorage.setItem('ffl_px_' + name, '1'); } } catch (x) {}
+    try { fbq(kind, name, data || {}, { eventID: name + '.' + Date.now() + '.' + Math.random().toString(36).slice(2, 10) }); } catch (x) {}
+  }
   var qs = new URLSearchParams(location.search);
   // GHL's Hidden Form redirect can drop the query string: fall back to what the registration page saved
   // in browser storage (same funnel domain) within the last 2 hours. URL values win when present.
@@ -71,6 +84,8 @@
     'SUMMARY:' + T.title, 'LOCATION:' + T.location.replace(/,/g, '\\,'), 'DESCRIPTION:' + T.details.replace(/\n/g, '\\n').replace(/,/g, '\\,'),
     'END:VEVENT', 'END:VCALENDAR'].filter(Boolean).join('\r\n');
   if (el('ty-ics')) el('ty-ics').href = 'data:text/calendar;charset=utf-8,' + encodeURIComponent(ics);
+  if (pay) pay.addEventListener('click', function () { px('track', 'InitiateCheckout', { content_name: T.campaign, value: T.value || 0, currency: 'USD' }, true); });
+  ['ty-gcal', 'ty-ics'].forEach(function (id) { if (el(id)) el(id).addEventListener('click', function () { px('trackCustom', 'AddToCalendar', { content_name: T.campaign }, true); }); });
   // share step: copy the link
   var sh = el('ty-share');
   if (sh) sh.addEventListener('click', function () {

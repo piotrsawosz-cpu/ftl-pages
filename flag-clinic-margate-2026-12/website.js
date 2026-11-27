@@ -15,6 +15,7 @@
       "HIDDEN_FORM_ID": "PJmAA0xMeMJynawvlT07",
       "REDIRECT_TIMEOUT_MS": 5000,
       "BROWSER_LEAD": false,
+      "META_PIXEL_ID": "2542431589593197",
       "CHANNEL": "website",
       "CHANNEL_SOURCE": "website",
       "CHANNEL_MEDIUM": "referral",
@@ -70,6 +71,16 @@
       "DONE_TEXT": "Your spot is saved. Check your email for the details."
   };
   /* ===================================================================================================== */
+
+  /* ---- Meta pixel (program.json meta_pixel_id). GHL funnels on go.ftlutd.com load no pixel, so the page loads it:
+     PageView on load; the Lead on submit is sent below when browser_lead is true. Skipped if GHL already loaded fbq. */
+  if (CONFIG.META_PIXEL_ID && !window.fbq) try {
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;
+    s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', CONFIG.META_PIXEL_ID);
+    fbq('track', 'PageView');
+  } catch (x) {}
 
   /* ---- Guard: GHL's "Save & exit" resume dialog on the Hidden Form ----
      If the Hidden Form has "Save & exit confirmation" on, GHL stores the email our code typed in
@@ -632,6 +643,7 @@
       program_age_group: byNum ? groupFor(byNum) : '',
       preferred_location: loc ? loc.value : CONFIG.DEFAULT_LOCATION,
       sms_consent: form.querySelector('input[name="sms_consent"]').checked ? 'yes' : 'no',
+      sms_opt_in: form.querySelector('input[name="sms_consent"]').checked ? 'Yes' : 'No',  // HubSpot's exact option values (forwarded to the HubSpot form)
       consent_language: consentLanguage(),
       zip_qualification: zipOk ? 'qualified' : 'not qualified',
       child_age_qualification: ageOk ? 'qualified' : 'not qualified',
